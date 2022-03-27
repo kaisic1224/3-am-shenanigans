@@ -9,7 +9,7 @@ const asteroids = () => {
 
   async function fetchData(fetchDate: string) {
     const response = await fetch(
-      `https://api.nasa.gov/EPIC/api/natural/date/${fetchDate}?api_key=`
+      `https://api.nasa.gov/EPIC/api/natural/date/${fetchDate}?api_key=1p1iOPh5sEWHCNJsvWZWsUy4SYOmTSdTmYkLUGGJ`
     );
     const data = await response.json();
     setData(data);
@@ -66,9 +66,11 @@ const asteroids = () => {
                       src={`https://api.nasa.gov/EPIC/archive/natural/${date?.replaceAll(
                         "-",
                         "/"
-                      )}/png/${pic.image}.png?api_key=`}
+                      )}/png/${
+                        pic.image
+                      }.png?api_key=1p1iOPh5sEWHCNJsvWZWsUy4SYOmTSdTmYkLUGGJ`}
                     />
-                    <p className='text-lg'>Date: {pic.date}</p>
+                    <p className="text-lg">Date: {pic.date}</p>
                     <p>
                       Centroid Coordinates:{" "}
                       {JSON.stringify(pic.centroid_coordinates).slice()}
