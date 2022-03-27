@@ -1,5 +1,6 @@
 import { FormEvent, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 const APOD = () => {
   const [photoOfDay, setPhotoOfDay] = useState<any>();
@@ -8,11 +9,10 @@ const APOD = () => {
 
   async function fetchPhoto(date: string) {
     const response = await fetch(
-      `https://api.nasa.gov/planetary/apod?date=${date}&api_key=89d5yUPlxJBKnTlI9ppycxZeRCecnYcAvDQeFgdj`
+      `https://api.nasa.gov/planetary/apod?date=${date}&api_key=1p1iOPh5sEWHCNJsvWZWsUy4SYOmTSdTmYkLUGGJ`
     );
     const data = await response.json();
     setPhotoOfDay(data);
-    console.log(data.hdurl);
   }
 
   useEffect(() => {
@@ -36,6 +36,9 @@ const APOD = () => {
 
   return (
     <>
+      <Head>
+        <title>Space Surf | APOD</title>
+      </Head>
       <div className="h-screen">
         <div className="flex">
           <img
