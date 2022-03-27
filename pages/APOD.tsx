@@ -29,7 +29,7 @@ const APOD = () => {
       <>
         <div>
           <input />
-          <input type="submit" />
+          <input type='submit' />
         </div>
       </>
     );
@@ -39,42 +39,42 @@ const APOD = () => {
       <Head>
         <title>Space Surf | APOD</title>
       </Head>
-      <div className="h-screen">
-        <div className="flex">
+      <div className='h-screen'>
+        <div className='flex'>
           <img
-            className="-z-50 opacity-50 absolute h-screen w-screen"
+            className='-z-50 opacity-50 absolute h-screen w-screen'
             src={photoOfDay.url}
           />
           <motion.div
             initial={{ y: "50%", x: "10%" }}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.95 }}
-            className="min-w-[600px] max-w-7xl relative min-h-fit max-h-fit rounded-xl bg-slate-500 grid grid-cols-3 mx-auto gap-2"
+            className='min-w-[600px] max-w-7xl relative min-h-fit max-h-fit rounded-xl bg-slate-500 grid grid-cols-3 mx-auto gap-2'
           >
             <img
-              className="rounded-xl max-h-full min-h-full self-center justify-self-center aspect-square"
+              className='rounded-xl max-h-full min-h-full self-center justify-self-center aspect-square'
               src={photoOfDay.url}
             />
-            <div className="col-span-2 p-4">
-              <h1 className="font-bold text-stone-800">{photoOfDay.title}</h1>
-              <h2 className="text-white">{photoOfDay.date}</h2>
-              <div className="text-xl min-w-fit min-h-fit font-semibold">
+            <div className='col-span-2 p-4'>
+              <h1 className='font-bold text-stone-800'>{photoOfDay.title}</h1>
+              <h2 className='text-white'>{photoOfDay.date}</h2>
+              <div className='text-xl min-w-fit min-h-fit font-semibold'>
                 {photoOfDay.explanation}
               </div>
             </div>
           </motion.div>
-          <div className="p-4">
+          <div className='p-4'>
             Select a Date (YYYY-MM-DD):
-            <form className="pt-2" onSubmit={handleSubmit}>
+            <form className='pt-2' onSubmit={handleSubmit}>
               <input
-                type="text"
+                type='text'
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
               />
               <motion.input
                 whileTap={{ scale: 0.95 }}
-                className="bg-red-200 font-semibold p-2 rounded-xl ml-2"
-                type="submit"
+                className='bg-red-200 font-semibold p-2 rounded-xl ml-2'
+                type='submit'
               ></motion.input>
             </form>
           </div>

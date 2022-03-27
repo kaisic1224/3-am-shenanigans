@@ -52,16 +52,16 @@ const asteroids = () => {
         <title>Space Surf | Asteroids</title>
       </Head>
 
-      <main className="bg-black min-h-screen">
-        <h1 className="text-white text-center">
+      <main className='bg-black min-h-screen'>
+        <h1 className='text-white text-center'>
           See how our Earth is changing!
         </h1>
-        <div className="w-72 mx-auto flex flex-col items-center text-center text-white ">
+        <div className='w-72 mx-auto flex flex-col items-center text-center text-white '>
           {data.length === 0 ? null : (
-            <div className="overflow-y-scroll flex flex-col w-full h-[25rem] mb-20">
+            <div className='overflow-y-scroll flex flex-col h-[25rem] mb-20'>
               {data.map((pic) => {
                 return (
-                  <div className="" key={pic.identifier}>
+                  <div className='' key={pic.identifier}>
                     <img
                       src={`https://api.nasa.gov/EPIC/archive/natural/${date?.replaceAll(
                         "-",
@@ -75,14 +75,14 @@ const asteroids = () => {
                       Centroid Coordinates:{" "}
                       {JSON.stringify(pic.centroid_coordinates).slice()}
                     </p>
-                    <p className="text-2xl">{pic.caption}</p>
+                    <p className='text-2xl'>{pic.caption}</p>
                   </div>
                 );
               })}
             </div>
           )}
           <input
-            type="range"
+            type='range'
             value={day}
             min={0}
             max={31}
