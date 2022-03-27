@@ -1,5 +1,6 @@
 import { FormEvent, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 const APOD = () => {
   const [photoOfDay, setPhotoOfDay] = useState<any>();
@@ -29,13 +30,17 @@ const APOD = () => {
       <>
         <div>
           <input />
-          <input type="submit" />
+          <input type='submit' />
         </div>
       </>
     );
 
   return (
     <>
+
+      <Head>
+        <title>Space Surf | APOD</title>
+      </Head>
       <div className="h-screen">
         <div className="flex">
           <img
@@ -58,6 +63,7 @@ const APOD = () => {
               <div className="text-xl min-w-fit min-h-fit font-semibold">
                 {photoOfDay.explanation}
               </div>
+
             </div>
           </motion.div>
           <div className="p-4">
@@ -75,6 +81,8 @@ const APOD = () => {
               ></motion.input>
             </form>
           </div>
+
+
         </div>
       </div>
     </>
