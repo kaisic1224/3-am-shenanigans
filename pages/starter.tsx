@@ -46,7 +46,9 @@ const starter = () => {
           hover:bg-blue-800'
           >
             <Link href='/asteroids'>
-              <a className='text-white no-underline'>Asteroids</a>
+              <a className='text-white no-underline'>
+                Earth Picture of the Day
+              </a>
             </Link>
           </motion.button>
           <motion.button
