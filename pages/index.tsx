@@ -5,7 +5,7 @@ import Image from "next/image";
 const Home: NextPage = () => {
   return (
     <>
-      <Head>Space Guys</Head>
+      <Head>Space Surf |</Head>
       <main>space guys</main>
     </>
   );
