@@ -9,12 +9,12 @@ const starter = () => {
         <title>Space Surf | Choose</title>
       </Head>
       <main className='bg-black text-white '>
-        <motion.div className='text-8xl overflow-hidden absolute flex flex-col justify-between min-h-screen w-full'>
+        <motion.div className='overflow-hidden absolute flex flex-col justify-between min-h-screen w-full'>
           <motion.h1
             initial={{ x: "-100%" }}
             animate={{ x: "100vw" }}
-            transition={{ type: "tween", duration: 5, repeat: Infinity }}
-            className='uppercase font-bold bg-gradient-to-t from-slate-700 to-white bg-clip-text text-transparent'
+            transition={{ type: "tween", duration: 6, repeat: Infinity }}
+            className='text-8xl uppercase font-bold bg-gradient-to-t from-slate-700 to-white bg-clip-text text-transparent'
           >
             Space
           </motion.h1>
@@ -27,7 +27,7 @@ const starter = () => {
               repeat: Infinity,
               repeatDelay: 0.5
             }}
-            className='ml-auto uppercase font-bold bg-gradient-to-t from-slate-700 to-white bg-clip-text text-transparent'
+            className='ml-auto text-8xl uppercase font-bold bg-gradient-to-t from-slate-700 to-white bg-clip-text text-transparent'
           >
             Surf
           </motion.h1>
@@ -45,7 +45,9 @@ const starter = () => {
             className='font-extrabold bg-blue-900 p-[.75em] px-[1em] rounded-full uppercase
           hover:bg-blue-800'
           >
-            <Link href='/asteroids'>Asteroids</Link>
+            <Link href='/asteroids'>
+              <a className='text-white no-underline'>Asteroids</a>
+            </Link>
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -56,7 +58,11 @@ const starter = () => {
             className='font-extrabold bg-blue-900 p-[.75em] px-[1em] rounded-full uppercase
           hover:bg-blue-800'
           >
-            <Link href='/APOD'>Astronomy Picture of the Day</Link>
+            <Link href='/APOD'>
+              <a className='text-white no-underline'>
+                Astronomy Picture of the Day
+              </a>
+            </Link>
           </motion.button>
         </motion.div>
         <section className='h-screen overflow-hidden'>
