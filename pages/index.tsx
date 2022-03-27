@@ -18,6 +18,7 @@ const vars = {
 const Home: NextPage = () => {
   return (
     <>
+
       <Head>
         <title>Space Surf | Home</title>
       </Head>
@@ -125,6 +126,7 @@ const Home: NextPage = () => {
           </section>
         </main>
       </AnimatePresence>
+
     </>
   );
 };
