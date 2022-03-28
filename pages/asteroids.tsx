@@ -53,6 +53,7 @@ const asteroids = () => {
         <title>Space Surf | Asteroids</title>
       </Head>
 
+
       <main className='bg-black min-h-screen text-white text-center'>
         <h1 className=''>See how our Earth is changing!</h1>
         <div className='flex w-screen justify-between'>
@@ -106,6 +107,7 @@ const asteroids = () => {
             </AnimatePresence>
           </div>
           <div>MONTH2</div>
+
         </div>
       </main>
     </>
