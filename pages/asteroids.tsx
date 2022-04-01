@@ -11,7 +11,7 @@ const asteroids = () => {
 
   async function fetchData(fetchDate: string) {
     const response = await fetch(
-      `https://api.nasa.gov/EPIC/api/natural/date/${fetchDate}?api_key=1p1iOPh5sEWHCNJsvWZWsUy4SYOmTSdTmYkLUGGJ`
+      `https://api.nasa.gov/EPIC/api/natural/date/${fetchDate}?api_key=`
     );
     const data = await response.json();
     setData(data);
@@ -85,7 +85,7 @@ const asteroids = () => {
                             "/"
                           )}/png/${
                             pic.image
-                          }.png?api_key=1p1iOPh5sEWHCNJsvWZWsUy4SYOmTSdTmYkLUGGJ`}
+                          }.png?api_key=`}
                         />
                         <p className='text-lg'>Date: {pic.date}</p>
                         <p>
