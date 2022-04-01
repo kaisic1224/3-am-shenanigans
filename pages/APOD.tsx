@@ -9,7 +9,7 @@ const APOD = () => {
 
   async function fetchPhoto(date: string) {
     const response = await fetch(
-      `https://api.nasa.gov/planetary/apod?date=${date}&api_key=1p1iOPh5sEWHCNJsvWZWsUy4SYOmTSdTmYkLUGGJ`
+      `https://api.nasa.gov/planetary/apod?date=${date}&api_key=`
     );
     const data = await response.json();
     setPhotoOfDay(data);
