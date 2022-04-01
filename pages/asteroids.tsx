@@ -7,6 +7,7 @@ const asteroids = () => {
   const [day, setDay] = useState(1);
   const [data, setData] = useState<any>([]);
   const [date, setDate] = useState<string>();
+  const [today, setToday] = useState<Date>(new Date());
 
   async function fetchData(fetchDate: string) {
     const response = await fetch(
@@ -32,10 +33,10 @@ const asteroids = () => {
 
   const debouncedDay = useCallback(
     debounce((day: number) => {
-      const today = new Date();
+      const deToday = new Date(today);
 
-      const mm = today.getMonth() + 1;
-      const yyyy = today.getFullYear() - 1;
+      const mm = deToday.getMonth() + 1;
+      const yyyy = deToday.getFullYear() - 1;
       const dd = new Date(yyyy, mm, 1).getDate() - 1 + day;
 
       const fetchDate = `${yyyy}-${
@@ -53,17 +54,20 @@ const asteroids = () => {
         <title>Space Surf | Asteroids</title>
       </Head>
 
-
-      <main className='bg-black min-h-screen text-white text-center'>
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        className='bg-black min-h-screen text-white text-center'
+      >
         <h1 className=''>See how our Earth is changing!</h1>
         <div className='flex w-screen justify-between'>
-          <div>
-            <div className='planet w-24 h-24'></div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi est
-              ex optio iure dolorum rerum! Veniam quibusdam ratione totam ea?
-            </p>
-          </div>
+          {data.length === 0 ? null : (
+            <div className='self-end'>
+              <h1>{today?.getMonth()! - 1}</h1>
+              <img src='/saturn.jpg' className='object-cover w-[30rem]' />
+            </div>
+          )}
           <div className='w-[25rem] mx-auto flex flex-col items-center text-center'>
             <AnimatePresence exitBeforeEnter>
               {data.length === 0 ? null : (
@@ -95,6 +99,7 @@ const asteroids = () => {
                 </div>
               )}
               <input
+                className='slider'
                 type='range'
                 value={day}
                 min={1}
@@ -106,10 +111,14 @@ const asteroids = () => {
               <div>Day: {day}</div>
             </AnimatePresence>
           </div>
-          <div>MONTH2</div>
-
+          {data.length === 0 ? null : (
+            <div className='self-end'>
+              <h1>{today?.getMonth()}</h1>
+              <img src='/venus.jpg' className='object-cover w-[30rem]' />
+            </div>
+          )}
         </div>
-      </main>
+      </motion.main>
     </>
   );
 };

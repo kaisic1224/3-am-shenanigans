@@ -11,6 +11,26 @@
   border-radius: 8px;
 }
 
-.planet {
-  shape-outside: circle(50%);
+.slider::-webkit-slider-runnable-track {
+  background-color: rgb(51 65 85);
+  border-radius: 99rem;
+}
+
+.slider {
+  -webkit-appearance: none;
+  background-color: transparent;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  background: rgb(30 41 59);
+  border: 4px solid white;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background-color: rgb(17, 24, 34);
+  border-color: rgb(228, 233, 238);
 }

@@ -70,7 +70,7 @@ const starter = () => {
         <section className='h-screen overflow-hidden'>
           <motion.img
             className='w-full h-full object-cover'
-            transition={{ ease: "easeOut", duration: 0.65 }}
+            transition={{ ease: "easeOut", duration: 0.45 }}
             src='/space-bg.jpg'
             layoutId='main-img'
           />
